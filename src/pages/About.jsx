@@ -97,7 +97,7 @@ export default function About() {
 
                 {/* About me */}
                 <div className="card section">
-                    <h2 style={{ margin: 0 }}>About the maintainer</h2>
+                    <h2 style={{ margin: 0 }}>About the developer</h2>
                     <h3 style={{ margin: '2px 0 6px' }}>{INFO.name} — {INFO.title}</h3>
                     <p className="muted">{INFO.summary}</p>
                     <p className="muted">
@@ -110,13 +110,6 @@ export default function About() {
                         <div className="chips">
                             {INFO.skills.map(s => <span key={s} className="chip">{s}</span>)}
                         </div>
-                    </div>
-
-                    <div style={{ marginTop: 10 }}>
-                        <strong>Highlights</strong>
-                        <ul className="list">
-                            {INFO.highlights.map(h => <li key={h} className="muted">{h}</li>)}
-                        </ul>
                     </div>
 
                     <div className="btns">
