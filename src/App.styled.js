@@ -10,7 +10,7 @@ export const Styled = {
         left: 0;
         width: 100%;
         height: 60px;
-        background-color: #000;
+        background-color: ${({ theme }) => theme.bg};
         display: flex;
         align-items: center;
         justify-content: center;
@@ -28,12 +28,12 @@ export const Styled = {
         }
     `,
     NavLink: styled(NavLink)`
-        color: #fff;
+        color: ${({ theme }) => theme.fg};
         text-decoration: none;
         font-size: 18px;
         font-weight: 500;
         &.active {
-            color: orangered;
+            color: ${({ theme }) => theme.fg};
         }
     `,
     Main: styled.main`
@@ -45,7 +45,7 @@ export const Styled = {
     `,
     Footer: styled.footer`
         border-top: 1px solid #333;
-        background-color: #000;
+        background-color: ${({ theme }) => theme.bg};
         display: flex;
         align-items: center;
         justify-content: center;
@@ -67,8 +67,8 @@ export const Styled = {
         a {
             text-decoration: none;
             padding: 5px 0;
-            border-bottom: 1px solid #fff;
-            color: #fff;
+            border-bottom: 1px solid ${({ theme }) => theme.fg};
+            color: ${({ theme }) => theme.fg};
         }
     `,
 };

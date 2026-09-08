@@ -1,63 +1,41 @@
 # Blood Bank
 
-![alt text](image-1.png)
+A React and Vite blood donor directory for finding donors, registering donor details, and managing contact messages locally in the browser.
 
--   **Live:** https://a2rp.github.io/blood-bank/
--   **Repo:** https://github.com/a2rp/blood-bank
+![Blood Bank dashboard preview](screenshot.png)
 
-React-based blood bank UI built with styled-components.
-Find & filter donors, register new donors with validation, manage contact messages, and edit donor details -
-all saved in localStorage. Vite-powered and GitHub Pages–ready.
+## Features
 
--   React Hook Form + Zod validation
--   Donor details modal with edit & save
--   Confirm dialog (self-made modal) before destructive actions
--   Custom toasts (no UI library)
--   localStorage seed + persistence
--   BrowserRouter + GH Pages SPA fallback
--   All styles scoped with styled.js pattern (export const Styled = { Wrapper: styled.div`` })
+- Fixed header with desktop sidebar and mobile menu
+- Donor search and filters by blood group, city, and availability
+- Donor registration with validation
+- Donor details, editing, and confirmation dialogs
+- Contact message management with local persistence
+- Light and dark themes
 
-## ✨ Features
-
--   Donors page: top filter bar + responsive card grid
-    -- Filters: Search (name/phone/email), Blood Group, City, Availability
-    -- Card click → modal with complete details + edit & save
--   Register Donor form:
-    -- Fields: Name, Age, Gender, Blood Group, Phone, Email, City, Last Donation, Available, Notes
-    -- Tight validation (RHF + Zod), clean errors, success toast
--   Contact:
-    -- Form to submit a message → saved in localStorage
-    -- Messages list under the form with Refresh, Delete, Clear all (each behind confirm)
--   Theming:
-    -- Dark/Light via ThemeProvider, GlobalStyles
-    -- Native controls tuned for dark mode (color-scheme)
--   Routing:
-    -- react-router-dom (BrowserRouter) with GH Pages–friendly setup
-
-## 🧱 Tech Stack
-
--   React (Vite)
--   styled-components (GlobalStyles + themes)
--   react-router-dom (BrowserRouter)
--   react-hook-form + Zod
--   localStorage-backed “API” layer
-
-## 🚀 Getting Started
+## Run locally
 
 ```bash
-# clone
-git clone https://github.com/a2rp/blood-bank
-cd blood-bank
-
-# install
-npm i
-
-# dev
+npm install
 npm run dev
-
-# build
-npm run build
-
-# preview production build
-npm run preview
 ```
+
+Build with `npm run build` and deploy to GitHub Pages with `npm run deploy`.
+
+## Links
+
+- Live: https://a2rp.github.io/blood-bank/
+- Repository: https://github.com/a2rp/blood-bank
+- Portfolio: https://www.ashishranjan.net/
+- GitHub: https://github.com/a2rp
+- CodePen: https://codepen.io/ash1198
+- LinkedIn: https://www.linkedin.com/in/aashishranjan
+- Facebook: https://www.facebook.com/theash.ashish/
+- YouTube: https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1
+- Email: mailto:ash.ranjan09@gmail.com
+
+## Support
+
+- Support: https://a2rp-donation-page.netlify.app/
+- Buy Me a Coffee: https://buymeacoffee.com/a2rp
+- Patreon: https://www.patreon.com/a2rp

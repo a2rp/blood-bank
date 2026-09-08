@@ -1,21 +1,21 @@
 export const lightTheme = {
     name: "light",
-    bg: "#f7f8fa",
-    fg: "#0f172a",
+    bg: "#f4f4f5",
+    fg: "#18181b",
     card: "#ffffff",
-    muted: "#475569",
-    border: "#e5e7eb",
-    primary: "orangered",
+    muted: "#52525b",
+    border: "#d4d4d8",
+    primary: "#18181b",
     primaryFg: "#fff",
 };
 
 export const darkTheme = {
     name: "dark",
-    bg: "#0b1220",
-    fg: "#e2e8f0",
-    card: "#121a2b",
-    muted: "#94a3b8",
-    border: "#1f2937",
-    primary: "orangered",
-    primaryFg: "#0b1220",
+    bg: "#09090b",
+    fg: "#f4f4f5",
+    card: "#18181b",
+    muted: "#a1a1aa",
+    border: "#3f3f46",
+    primary: "#f4f4f5",
+    primaryFg: "#18181b",
 };

@@ -66,5 +66,5 @@ const Btn = styled.button`
   padding: 10px 14px; border-radius: 10px; cursor: pointer;
   border: 1px solid ${({ theme }) => theme.border};
   background: ${({ theme }) => theme.card};
-  &.danger { background: #ef4444; color: #fff; border-color: transparent; }
+  &.danger { background: ${({ theme }) => theme.fg}; color: ${({ theme }) => theme.bg}; border-color: transparent; }
 `

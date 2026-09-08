@@ -1,5 +1,5 @@
 {
-    "name": "frontend",
+    "name": "blood-bank",
     "private": true,
     "version": "0.0.0",
     "type": "module",
@@ -9,7 +9,7 @@
         "lint": "eslint .",
         "preview": "vite preview",
         "predeploy": "npm run build",
-        "deploy": "npx gh-pages -d dist -b gh-pages"
+        "deploy": "npx --yes gh-pages -d dist -b gh-pages"
     },
     "dependencies": {
         "@emotion/react": "^11.14.0",
