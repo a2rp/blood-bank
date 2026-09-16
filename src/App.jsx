@@ -49,6 +49,10 @@ export default function App() {
                         <Styled.Main>
                             <AppRoutes />
                         </Styled.Main>
+                        <Styled.Footer>
+                            Copyright &copy; {new Date().getFullYear()} <a href="https://www.ashishranjan.net" target="_blank" rel="noopener noreferrer">Ashish Ranjan</a>
+                            <nav aria-label="Footer links"><a href="https://github.com/a2rp" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://codepen.io/ash1198" target="_blank" rel="noopener noreferrer">CodePen</a><a href="mailto:ash.ranjan09@gmail.com">Email</a><a href="https://a2rp-donation-page.netlify.app/" target="_blank" rel="noopener noreferrer">Support</a><a href="https://buymeacoffee.com/a2rp" target="_blank" rel="noopener noreferrer">Buy Me A Coffee</a><a href="https://patreon.com/a2rp" target="_blank" rel="noopener noreferrer">Patreon</a></nav>
+                        </Styled.Footer>
                     </Styled.Wrapper>
                 </ConfirmProvider>
             </ToastProvider>
@@ -70,6 +74,12 @@ const Styled = {
             margin-left: 0;
             padding: 84px 15px 24px;
         }
+    `,
+    Footer: styled.footer`
+        width: calc(100% - 280px); margin-left: 280px; padding: 18px 50px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 14px; color: ${({ theme }) => theme.muted}; font-size: .8rem; text-align: center;
+        a { color: ${({ theme }) => theme.fg}; font-weight: 600; }
+        nav { width: 100%; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 14px; }
+        @media (width<900px) { width: 100%; margin-left: 0; padding: 16px; }
     `,
     Loader: styled.div`
         min-height: 60vh;
