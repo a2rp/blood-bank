@@ -1,4 +1,4 @@
-import{u as f,r as t,c as N,j as e,d as y}from"./index-ZRECE9bq.js";import{u as v,a as w,o as $,s as d}from"./zod-os2CPXAg.js";import{a as k,s as C,d as S,b as T}from"./api-Bu0U2RRx.js";const M=$({name:d().min(2,"Name too short"),email:d().email(),message:d().min(10,"Tell us a bit more...")}),D=y.div`
+import{u as f,r as t,c as N,j as e,d as y}from"./index-C0ojuvKQ.js";import{u as v,a as w,o as $,s as d}from"./zod-C_okCwJ9.js";import{a as k,s as C,d as S,b as T}from"./api-Bu0U2RRx.js";const M=$({name:d().min(2,"Name too short"),email:d().email(),message:d().min(10,"Tell us a bit more...")}),D=y.div`
   .card { background:${({theme:s})=>s.card}; border:1px solid ${({theme:s})=>s.border}; border-radius: var(--radius); padding: 16px; }
   form { display:grid; gap:12px; }
   label { display:grid; gap:6px; }
