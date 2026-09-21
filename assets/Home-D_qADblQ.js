@@ -1,4 +1,4 @@
-import{r as e,j as r,N as d,d as o}from"./index-C0ojuvKQ.js";import{g as t}from"./api-Bu0U2RRx.js";const l=o.div`
+import{r as e,j as r,N as d,d as o}from"./index-RUCYDgiK.js";import{g as t}from"./api-Bu0U2RRx.js";const l=o.div`
   .hero { padding: 64px 24px; background: linear-gradient(180deg, rgba(244,63,94,0.08), transparent 60%); }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
   .card { background: ${({theme:a})=>a.card}; border: 1px solid ${({theme:a})=>a.border}; border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
