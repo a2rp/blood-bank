@@ -18,6 +18,27 @@ const Bar = styled.div`
 const Brand = styled.div`
     display: flex; align-items: center; gap: 10px;
     font-weight: 800; letter-spacing: .2px; font-size: 18px;
+    color: ${({ theme }) => theme.fg};
+`
+const BrandLink = styled(NavLink)`
+    display: inline-flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+`
+const Logo = styled.img`
+    width: 34px;
+    height: 34px;
+    padding: 4px;
+    object-fit: contain;
+    border: 1px solid ${({ theme }) => theme.border};
+    border-radius: 9px;
+    background: ${({ theme }) => theme.card};
+    @media (max-width: 560px) {
+        width: 30px;
+        height: 30px;
+        padding: 3px;
+    }
 `
 const Links = styled.div`
     display: flex; gap: 12px; align-items: center;
@@ -65,7 +86,12 @@ export default function Navbar({ mode, setMode }) {
         <>
         <Nav>
             <Bar>
-                <NavLink to="/"><Brand><FaHeartPulse /> Blood Bank</Brand></NavLink>
+                <BrandLink to="/" aria-label="Blood Bank home">
+                    <Brand>
+                        <Logo src={`${import.meta.env.BASE_URL}logo.png`} alt="Blood Bank logo" />
+                        <span><FaHeartPulse /> Blood Bank</span>
+                    </Brand>
+                </BrandLink>
                 <Links><Toggle onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')} aria-label="Toggle theme">
                     {mode === 'dark' ? <FiSun /> : <FiMoon />}<span className="mode-label">{mode === 'dark' ? 'Light' : 'Dark'}</span>
                 </Toggle><MenuButton onClick={() => setOpen(v => !v)} aria-label={open ? 'Close menu' : 'Open menu'}>{open ? <FiX /> : <FiMenu />}</MenuButton></Links>

@@ -6,12 +6,15 @@ A React and Vite blood donor directory for finding donors, registering donor det
 
 ## Features
 
-- Fixed header with desktop sidebar and mobile menu
+- Responsive fixed header with desktop sidebar and mobile menu
 - Donor search and filters by blood group, city, and availability
-- Donor registration with validation
-- Donor details, editing, and confirmation dialogs
+- Validated donor registration and editing
 - Contact message management with local persistence
-- Light and dark themes
+- Light and dark themes with a floating Go to top button
+
+## Tech stack
+
+React, Vite, React Router, styled-components, React Hook Form, Zod, React Icons, and localStorage.
 
 ## Run locally
 
@@ -22,10 +25,14 @@ npm run dev
 
 Build with `npm run build` and deploy to GitHub Pages with `npm run deploy`.
 
+## Deployment
+
+- Live site: https://a2rp.github.io/blood-bank/
+- Repository: https://github.com/a2rp/blood-bank
+- License: MIT
+
 ## Links
 
-- Live: https://a2rp.github.io/blood-bank/
-- Repository: https://github.com/a2rp/blood-bank
 - Portfolio: https://www.ashishranjan.net/
 - GitHub: https://github.com/a2rp
 - CodePen: https://codepen.io/ash1198
