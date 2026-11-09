@@ -51,13 +51,27 @@ export default function Contact() {
         setLoading(false)
     }
 
-    useEffect(() => { refresh() }, [])
+    useEffect(() => {
+        let active = true
+        async function loadInitialMessages() {
+            const data = await listMessages()
+            if (!active) return
+            setMsgs(data)
+            setLoading(false)
+        }
+        loadInitialMessages()
+        return () => { active = false }
+    }, [])
 
     const onSubmit = async (values) => {
-        await sendMessage(values)
-        push('Message sent!', 'success')
-        reset()
-        refresh()
+        try {
+            await sendMessage(values)
+            push('Message saved in this browser.', 'success')
+            reset()
+            refresh()
+        } catch (error) {
+            push(error.message || 'Could not save this message.', 'error')
+        }
     }
 
     const confirm = useConfirm();
@@ -70,9 +84,13 @@ export default function Contact() {
             cancelText: 'Cancel',
         })
         if (!ok) return
-        await deleteMessage(id)
-        push('Deleted', 'success')
-        refresh()
+        try {
+            await deleteMessage(id)
+            push('Message deleted.', 'success')
+            refresh()
+        } catch (error) {
+            push(error.message || 'Could not delete this message.', 'error')
+        }
     }
 
     const onClearAll = async () => {
@@ -83,15 +101,20 @@ export default function Contact() {
             cancelText: 'Keep',
         })
         if (!ok) return
-        await clearAllMessages()
-        push('All messages cleared', 'success')
-        refresh()
+        try {
+            await clearAllMessages()
+            push('All messages cleared.', 'success')
+            refresh()
+        } catch (error) {
+            push(error.message || 'Could not clear these messages.', 'error')
+        }
     }
 
     return (
         <Wrapper className="container">
             <div className="card">
                 <h2>Contact Us</h2>
+                <p className="muted" role="note">Demo only: this form does not send email. Messages are saved in this browser and are not shared.</p>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label>Name
                         <input {...register('name')} placeholder="Your name" />

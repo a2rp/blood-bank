@@ -45,26 +45,25 @@ const Wrapper = styled.div`
 
 function useQueryState() {
     const [sp, setSp] = useSearchParams()
-    const get = (k, def = '') => sp.get(k) ?? def
     const set = (next) => setSp(prev => {
         const o = new URLSearchParams(prev)
         Object.entries(next).forEach(([k, v]) => v === undefined ? o.delete(k) : o.set(k, v))
         return o
     })
-    return [sp, get, set]
+    return [sp, set]
 }
 
 export default function Donors() {
-    const [sp, get, set] = useQueryState()
+    const [sp, set] = useQueryState()
     const [data, setData] = useState([])
     const [selected, setSelected] = useState(null) // donor object
     const { push } = useToast()
 
     const state = useMemo(() => ({
-        q: get('q', ''),
-        bloodGroup: get('g', 'ALL'),
-        city: get('c', ''),
-        available: get('a', 'ALL'),
+        q: sp.get('q') ?? '',
+        bloodGroup: sp.get('g') ?? 'ALL',
+        city: sp.get('c') ?? '',
+        available: sp.get('a') ?? 'ALL',
     }), [sp])
 
     useEffect(() => { listDonors(state).then(setData) }, [state])
@@ -93,15 +92,19 @@ export default function Donors() {
 
     const onSave = async (values) => {
         if (!selected) return
-        const updated = await updateDonor(selected.id, values)
-        // update list in place:
-        setData(prev => prev.map(d => d.id === updated.id ? updated : d))
-        push('Donor updated', 'success')
-        setSelected(null)
+        try {
+            const updated = await updateDonor(selected.id, values)
+            setData(prev => prev.map(d => d.id === updated.id ? updated : d))
+            push('Donor updated in this browser.', 'success')
+            setSelected(null)
+        } catch (error) {
+            push(error.message || 'Could not update this donor.', 'error')
+        }
     }
 
     return (
         <Wrapper className="container">
+            <p className="muted" role="note">Demo directory: sample contacts are fictional. Donor records stay in this browser and are not shared. Do not use this app for emergencies.</p>
             <div className="panel">
                 <div className="filters">
                     <input placeholder="Search name/phone/email" value={state.q} onChange={e => set({ q: e.target.value })} />

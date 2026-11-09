@@ -7,6 +7,7 @@ import {
 import { seedDonors } from "../data/seed.js";
 
 const delay = (ms = 300) => new Promise((res) => setTimeout(res, ms));
+const STORAGE_ERROR = "This browser could not save the demo data. Check available browser storage and try again.";
 
 function ensureSeed() {
     const donors = loadDonors();
@@ -57,7 +58,7 @@ export async function createDonor(payload) {
     const donors = ensureSeed();
     const id = Math.random().toString(36).slice(2);
     const next = [{ ...payload, id }, ...donors];
-    saveDonors(next);
+    if (!saveDonors(next)) throw new Error(STORAGE_ERROR);
     return { id, ...payload };
 }
 
@@ -66,7 +67,7 @@ export async function sendMessage(payload) {
     const msgs = loadMessages();
     const id = Math.random().toString(36).slice(2);
     const next = [{ id, at: new Date().toISOString(), ...payload }, ...msgs];
-    saveMessages(next);
+    if (!saveMessages(next)) throw new Error(STORAGE_ERROR);
     return { ok: true, id };
 }
 
@@ -78,13 +79,13 @@ export async function listMessages() {
 export async function deleteMessage(id) {
     await delay(150);
     const msgs = loadMessages().filter((m) => m.id !== id);
-    saveMessages(msgs);
+    if (!saveMessages(msgs)) throw new Error(STORAGE_ERROR);
     return { ok: true };
 }
 
 export async function clearAllMessages() {
     await delay(150);
-    saveMessages([]);
+    if (!saveMessages([])) throw new Error(STORAGE_ERROR);
     return { ok: true };
 }
 
@@ -101,6 +102,6 @@ export async function updateDonor(id, patch) {
     if (idx === -1) throw new Error("Donor not found");
     const next = { ...donors[idx], ...patch };
     donors[idx] = next;
-    saveDonors(donors);
+    if (!saveDonors(donors)) throw new Error(STORAGE_ERROR);
     return next;
 }

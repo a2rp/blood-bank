@@ -20,7 +20,7 @@ export default function Home() {
             <div className="container hero">
                 <span className="badge">Give blood, save lives</span>
                 <h1 style={{ margin: '10px 0 6px' }}>Find and Register Blood Donors</h1>
-                <p style={{ margin: '0 0 14px', color: 'var(--muted)' }}>Frontend-only demo app. Data is stored in your browser (localStorage).</p>
+                <p style={{ margin: '0 0 14px', color: 'var(--muted)' }}>Demo only: sample donor records are fictional. Data stays in this browser and is not shared or sent to a server.</p>
                 <div className="cta">
                     <NavLink className="btn primary" to="/donors">Find Donors</NavLink>
                     <NavLink className="btn" to="/register">Register as Donor</NavLink>

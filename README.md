@@ -18,12 +18,18 @@ React, Vite, React Router, styled-components, React Hook Form, Zod, React Icons,
 
 ## Run locally
 
+Requires Node.js 20.19 or newer.
+
 ```bash
 npm install
 npm run dev
 ```
 
 Build with `npm run build` and deploy to GitHub Pages with `npm run deploy`.
+
+## Demo data and privacy
+
+This is a frontend-only demo. Donor records and contact messages stay in the current browser's local storage and are not sent to a server. Seeded donor entries are fictional examples; do not use this directory for real donation coordination or emergencies.
 
 ## Deployment
 

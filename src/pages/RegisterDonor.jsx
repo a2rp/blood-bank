@@ -44,10 +44,14 @@ export default function RegisterDonor() {
     })
 
     const onSubmit = async (values) => {
-        await createDonor(values)
-        push('Donor registered!', 'success')
-        reset()
-        nav('/donors')
+        try {
+            await createDonor(values)
+            push('Donor saved in this browser.', 'success')
+            reset()
+            nav('/donors')
+        } catch (error) {
+            push(error.message || 'Could not save this donor.', 'error')
+        }
     }
 
     return (
