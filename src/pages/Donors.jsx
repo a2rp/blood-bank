@@ -104,7 +104,7 @@ export default function Donors() {
 
     return (
         <Wrapper className="container">
-            <p className="muted" role="note">Demo directory: sample contacts are fictional. Donor records stay in this browser and are not shared. Do not use this app for emergencies.</p>
+            <p className="muted" role="note">Demo directory: sample contacts are fictional. Use fictional information only; donor records stay in this browser. Do not use this app for real donation coordination or emergencies.</p>
             <div className="panel">
                 <div className="filters">
                     <input placeholder="Search name/phone/email" value={state.q} onChange={e => set({ q: e.target.value })} />

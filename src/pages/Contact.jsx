@@ -114,7 +114,7 @@ export default function Contact() {
         <Wrapper className="container">
             <div className="card">
                 <h2>Contact Us</h2>
-                <p className="muted" role="note">Demo only: this form does not send email. Messages are saved in this browser and are not shared.</p>
+                <p className="muted" role="note">Demo only: this form does not send email. Use fictional information only; messages stay in this browser and are not shared.</p>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label>Name
                         <input {...register('name')} placeholder="Your name" />

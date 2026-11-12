@@ -58,6 +58,7 @@ export default function RegisterDonor() {
         <Wrapper className="container">
             <div className="card">
                 <h2 style={{ marginTop: 0 }}>Register as a Donor</h2>
+                <p role="note">Demo only: use fictional information. Do not enter real donor, contact, or health details; this form saves data in this browser only.</p>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="row">
                         <label>Full Name

@@ -29,7 +29,7 @@ Build with `npm run build` and deploy to GitHub Pages with `npm run deploy`.
 
 ## Demo data and privacy
 
-This is a frontend-only demo. Donor records and contact messages stay in the current browser's local storage and are not sent to a server. Seeded donor entries are fictional examples; do not use this directory for real donation coordination or emergencies.
+This is a frontend-only demo. Donor records and contact messages stay in the current browser's local storage and are not sent to a server. Seeded donor entries are fictional examples; use fictional information only and never enter real donor, contact, or health details. Do not use this directory for real donation coordination or emergencies.
 
 ## Deployment
 
